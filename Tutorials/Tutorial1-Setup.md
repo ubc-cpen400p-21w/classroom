@@ -117,7 +117,7 @@ sudo make install
 
 We have already set up an Ubuntu virtual machine with LLVM, KLEE, and AFL installed. You can simply download the virtual machine from the following link and import it on VirtualBox. Refer to the following tutorial on [importing virtual machines on VirtualBox](https://docs.oracle.com/cd/E26217_01/E26796/html/qs-import-vm.html "importing Virtual machines on VirtualBox").
 
-Download Virtual Machine [username: cpen400, password: root]: [LINK](https://ubcca-my.sharepoint.com/:u:/r/personal/uditag97_student_ubc_ca/Documents/ubuntu18_cpen400.ova?csf=1&web=1&e=tn1Fns "LINK") . Please use your UBC email to access the file.
+Download Virtual Machine [username: cpen400, password: root]: [LINK](https://ubcca-my.sharepoint.com/:u:/g/personal/uditag97_student_ubc_ca/ERuvE5FmjlpNj5_3IfbY3tkBCEGGfNB8_uPSAu5OW-KXoQ "LINK") . Please use your UBC email to access the file.
 
 **Note:-**  While importing the virtual machine, please allocate at least 4GB RAM to the VM. Building LLVM requires a considerable amount of RAM.
 

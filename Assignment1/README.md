@@ -143,3 +143,26 @@ For this assignment, here's what you have to do:
 
 4. After iterating through all the instructions in the basic block, assign ExitSet = EntrySet
 ```
+
+## Submission Instructions
+
+#### Deliverable(s):
+
+1. A single `.cpp` file containing the source code of your LLVM analysis pass. Please name this file as `Assignment1.cpp`. Also, please register the pass as `undeclvar` as done in the assignment template code.
+
+```C++
+static RegisterPass<Assignment1> X("undeclvar",
+                                   "Pass to find undeclared variables");
+```
+
+#### Notes:
+- Please push your deliverables in the **A1-Submit** folder in the **main** branch by the deadline.
+- Do not rename the submission folder.
+- Points will be deducted if you have more deliverables than requested.
+
+## Deadline:
+
+A snapshot of your submission folder will be automatically taken by the following deadline:
+
+- Friday, Feb 4, 2022 23:59:00 PST
+

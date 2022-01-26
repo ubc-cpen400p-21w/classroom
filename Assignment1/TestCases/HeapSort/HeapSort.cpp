@@ -4,7 +4,8 @@ using namespace std;
 
 // To heapify a subtree rooted with node i which is
 // an index in arr[]. n is size of heap
-void heapify(int arr[], int n, int i) {
+void heapify(int arr[], int n, int i)
+{
   // int largest = i; // Initialize largest as root
   int largest;       // BUG!!!
   int l = 2 * i + 1; // left = 2*i + 1

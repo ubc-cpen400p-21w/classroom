@@ -5,6 +5,8 @@
 
 Write a LLVM pass for intra-procedural analysis to find usages of undefined local variables. The pass should print the function name along with **all** the line numbers (corresponding to the source  code) at which an undefined variable(s) is(are) used.
 
+For simplicity, you are not required to check for undefined variables that are both declared and used within a cycle.
+
 ## Example 1 (HelloWorld)
 
 ```cpp

@@ -158,7 +158,7 @@ static RegisterPass<Assignment1> X("undeclvar",
 ```
 
 #### Notes:
-- Please push your deliverables in the **A1-Submit** folder in the **master** branch by the deadline.
+- Please push your deliverables in the **A1_Submit** folder in the **master** branch by the deadline.
 - Do not rename the submission folder.
 - Points will be deducted if you have more deliverables than requested.
 

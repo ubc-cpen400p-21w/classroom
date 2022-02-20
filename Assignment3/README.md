@@ -223,6 +223,24 @@ You can make the shared library either in C or C++. If using C++, make sure to w
 
 Also, to use your shared library, make sure to set the shared variable `LD_LIBRARY_PRELOAD` [https://stackoverflow.com/questions/46175203/how-to-modify-a-ld-library-path-environment-variable](https://stackoverflow.com/questions/46175203/how-to-modify-a-ld-library-path-environment-variable).
 
+### Compiling your binary with the shared library
+
+```
+// ------- Running on simple DF example -------
+
+// Command to run LLVM OPT tool to instrument the input file
+$LLVM_BUILD_DIR/bin/opt  -load /home/cpen400/llvm-project/build/lib/LLVMAssignment3.so -heapbugs --enable-new-pm=0 ./TestCases/SimpleDFBug/SimpleDFBug.bc -S -o ./TestCases/SimpleDFBug/SimpleDFBug.ll
+
+// Convert .ll file to .s file
+llc ./TestCases/SimpleDFBug/SimpleDFBug.ll
+
+// Generate binary from the .s file
+clang ./TestCases/SimpleDFBug/SimpleDFBug.s -o ./TestCases/SimpleDFBug/SimpleDFBug -L$PWD/SharedLib/ -l<name_of_your_shared_library>
+
+// Run the resulting binary
+./TestCases/SimpleDFBug/SimpleDFBug
+```
+
 ## Hint
 
 You may reuse any template code or helper functions provided in the previous assignments.

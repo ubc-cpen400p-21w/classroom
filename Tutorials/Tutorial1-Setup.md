@@ -78,7 +78,7 @@ git clone git@github.com:klee/klee-uclibc.git
 cd klee-uclibc
 ./configure --make-llvm-lib
 make KLEE_CFLAGS="-DKLEE_SYM_PRINTF"
-cd ../..
+cd ..
 git clone https://github.com/klee/klee.git
 cd klee && mkdir build && cd build
 cmake -DENABLE_SOLVER_Z3=ON -DENABLE_UNIT_TESTS=OFF -DENABLE_SYSTEM_TESTS=OFF -DZ3_INCLUDE_DIRS=$HOME/z3/build/include -DENABLE_TCMALLOC=OFF -DHAVE_Z3_GET_ERROR_MSG_NEEDS_CONTEXT=ON -DENABLE_POSIX_RUNTIME=ON -DENABLE_KLEE_UCLIBC=ON -DKLEE_UCLIBC_PATH=$HOME/klee-uclibc -DLLVMCC=$HOME/llvm-project/build/bin/clang -DLLVMCXX=$HOME/llvm-project/build/bin/clang++ ..

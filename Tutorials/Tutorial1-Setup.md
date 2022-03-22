@@ -43,10 +43,10 @@ pip3 install lit tabulate wllvm
 1. Run the following commands:
 ```shell
 git clone https://github.com/llvm/llvm-project.git
-cd llvm-project && git checkout d7b669b3a30 && cd ..
+cd llvm-project && git checkout release/13.x && cd ..
 mkdir llvm-project/build
 cd llvm-project/build
-cmake -G Ninja ../llvm -DLLVM_ENABLE_PROJECTS="tools;clang"  -DLLVM_TARGETS_TO_BUILD="host"  -DLLVM_ENABLE_ASSERTIONS=ON -DLLVM_ENABLE_RTTI=ON -DLLVM_OPTIMIZED_TABLEGEN=ON -DCMAKE_BUILD_TYPE=Release
+cmake -G Ninja ../llvm -DLLVM_ENABLE_PROJECTS="tools;clang;compiler-rt"  -DLLVM_TARGETS_TO_BUILD="host"  -DLLVM_ENABLE_ASSERTIONS=ON -DLLVM_ENABLE_RTTI=ON -DLLVM_OPTIMIZED_TABLEGEN=ON -DCMAKE_BUILD_TYPE=Release
 ninja -j4
 sudo ninja install
 ```
@@ -72,11 +72,16 @@ cp ../src/api/*.h ./include/
 cp ../src/api/c++/z3++.h ./include/z3++.h
 ```
 
-3. Run the following commands to install KLEE:
+3. Run the following commands to install KLEE and KLEE-uClibC:
 ```shell
+git clone git@github.com:klee/klee-uclibc.git
+cd klee-uclibc
+./configure --make-llvm-lib
+make KLEE_CFLAGS="-DKLEE_SYM_PRINTF"
+cd ..
 git clone https://github.com/klee/klee.git
 cd klee && mkdir build && cd build
-cmake -DENABLE_SOLVER_Z3=ON -DENABLE_UNIT_TESTS=OFF -DENABLE_SYSTEM_TESTS=OFF -DZ3_INCLUDE_DIRS=$HOME/z3/build/include -DENABLE_TCMALLOC=OFF -DHAVE_Z3_GET_ERROR_MSG_NEEDS_CONTEXT=ON -DLLVMCC=$HOME/llvm-project/build/bin/clang -DLLVMCXX=$HOME/llvm-project/build/bin/clang++ ..
+cmake -DENABLE_SOLVER_Z3=ON -DENABLE_UNIT_TESTS=OFF -DENABLE_SYSTEM_TESTS=OFF -DZ3_INCLUDE_DIRS=$HOME/z3/build/include -DENABLE_TCMALLOC=OFF -DHAVE_Z3_GET_ERROR_MSG_NEEDS_CONTEXT=ON -DENABLE_POSIX_RUNTIME=ON -DENABLE_KLEE_UCLIBC=ON -DKLEE_UCLIBC_PATH=$HOME/klee-uclibc -DLLVMCC=$HOME/llvm-project/build/bin/clang -DLLVMCXX=$HOME/llvm-project/build/bin/clang++ ..
 make -j2
 sudo make install
 ```

@@ -46,7 +46,7 @@ You may include screenshots to complement your explanations.
 
 2. * A) Prepare `PasswordCheck.c` for AFL. (5 marks for code, 20 marks for short answers)
        * i. Instrument the program for AFL. You should identify which variables should be read from STDIN.
-       * ii. Restrict the state space so that KLEE only checks for lowercase alphabetic characters (a-z) for the string input.
+       * ii. Restrict the state space so that AFL only checks for lowercase alphabetic characters (a-z) for the string input.
        * iii. You may assume that the input text will not exceed 16 characters.
        * iv. Please submit this modified file as `AFL1.c`. (5 marks)
    * B) Run AFL on the modified program, with default options. You must supply an input folder with seed files. Start with minimal number of seed files.

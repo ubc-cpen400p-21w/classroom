@@ -127,7 +127,7 @@ opt -S -enable-new-pm=0 -load $PATH_TO_PASS -faultinjection -fault-type $N < Qui
 
 You can use the following command to compile a shared library:
 ```bash
-clang++ --shared -fPIC RuntimeInjection.cpp -o RuntimeInjection.so
+clang++ --shared -fPIC RuntimeFI.cpp -o RuntimeFI.so
 ```
 Notice the use of `--shared -fPIC` options.
 
@@ -135,7 +135,7 @@ Please make the shared library in C++, and make sure to wrap the exported functi
 
 4. Run your LLVM pass using `opt` on the IR file.
 ``` bash
-clang++ QuicksortFI.ll RuntimeInjection.so -o QuicksortFI
+clang++ QuicksortFI.ll RuntimeFI.so -o QuicksortFI
 ```
 
 ## Hint

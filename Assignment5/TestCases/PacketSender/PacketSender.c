@@ -33,7 +33,7 @@ void print_address(char *packet) {
   arp_addr hwaddr;
 
   hwaddr.hwtype = malloc(4);
-  
+
   memset(hwaddr.hwtype, 1, 4);
   memset(hwaddr.addr, 0, MAX_ADDR_LEN);
 
@@ -49,7 +49,7 @@ void print_address(char *packet) {
   for (int i = 0; i < hwaddr.len - 1; i++) {
     printf("%02hhx::", hwaddr.addr[i] );
   }
-  printf("%02hhx\n", hwaddr.addr[hwaddr.len - 1]);  
+  printf("%02hhx\n", hwaddr.addr[hwaddr.len - 1]);
 
   return;
 }
@@ -83,7 +83,7 @@ int main(int argc, char *argv[]) {
     printf("Error reading packet from file\n");
     return 0;
   }
-  
+
   close(fd);
   memcpy(packetCpy, packet, sbuf.st_size * sizeof(char));
   print_address(packet);

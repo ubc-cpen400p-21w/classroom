@@ -74,15 +74,15 @@ We breakdown the steps for your fault injection analysis.
 Please describe your findings in a written PDF document.
 At the end of this assignment, you should have a total of **8 pie graphs**.
 
-1. Describe the fault model for each of the three injected faults. (15 marks)
+1. Describe a real-life scenario behind each of the three injected faults. What is a scenario in which you would encounter a buffer overflow? Memory Exhaustion? A logical fault? (5 marks)
 
 2. For each test program, and each fault type, measure the number of percentage of Benigns, Crashes, Hangs, and SDCs, after performing fault injection for 1000 times. You will want to automate the fault injection process in a shell script. Report the results in a pie graph (the four above possible failure outcomes) for each fault type - you should have 6 separate pie graphs in total. (10 marks)
 
-3. Measure and report the average percentage runtime overhead of the fault injected programs over the original programs. Do this for two test programs separately. (5 marks)
+3. Measure and report the average percentage runtime overhead of the fault injected programs over the original programs. Do this for two test programs, and for each fault type, separately. (5 marks)
 
-4. Modify the `PacketSender.c` file to reduce error cases caused by buffer overflow injection. (Hint: The modifications should be minor. Can you find a one-line workaround?) Submit this modified source code file. Explain what you added/modified/removed. Rerun the fault injection experiments for buffer overflow only, and report the new results in a new pie graph. Do you observe any differences in failure outcomes after fixing the bug(s)? (5 marks)
+4. Modify the `PacketSender.c` file to reduce error cases caused by buffer overflow injection. (Hint: The modifications should be minor. Can you find a one-line workaround?) Submit this modified source code file. Explain what you added/modified/removed. Rerun the fault injection experiments for buffer overflow only, and report the new results in a new pie graph. Do you observe any differences in failure outcomes after fixing the bug(s)? What is the runtime overhead of your (more fault tolerant) modified program compared to the original program? (10 marks)
 
-5. Modify the `Quicksort.cpp` file to reduce error cases caused by logical faults. Submit this modified source code file. Explain what you added/modified/removed. Rerun the fault injection experiments for logical faults only, and report the new results in a new pie graph. Do you observe any differences in failure outcomes after fixing the bug(s)? (5 marks)
+5. Modify the `Quicksort.cpp` file to reduce error cases caused by logical faults. Submit this modified source code file. Explain what you added/modified/removed. Rerun the fault injection experiments for logical faults only, and report the new results in a new pie graph. Do you observe any differences in failure outcomes after fixing the bug(s)? What is the runtime overhead of your (more fault tolerant) modified program compared to the original program? (10 marks)
 
 
 #### Deliverable(s):

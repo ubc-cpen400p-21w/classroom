@@ -6,9 +6,9 @@
 #define ARRSIZE 6
 
 using namespace std;
- 
+
 int partition(int arr[], int start, int end) {
- 
+
   int pivot = arr[start];
 
   int count = 0;
@@ -23,7 +23,7 @@ int partition(int arr[], int start, int end) {
   int i = start, j = end;
 
   while (i < pivotIndex && j > pivotIndex) {
-    
+
     while (arr[i] <= pivot) {
       i++;
     }
@@ -49,7 +49,7 @@ void quickSort(int arr[], int start, int end) {
   quickSort(arr, start, p - 1);
   quickSort(arr, p + 1, end);
 }
- 
+
 int main() {
 
   int *n = (int *)malloc(sizeof(int));
@@ -69,7 +69,7 @@ int main() {
   for (int i = 0; i < *n; i++) {
       cout << arr[i] << " ";
   }
-  
+
   cout << "\n";
 
   free(arr);

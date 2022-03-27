@@ -5,6 +5,16 @@
 Fault injection testing is a software testing method where faults are purposely introduced to a system to understand its ability to respond and tolerate errors.
 In this assignment, you will be implementing fault injection using LLVM on two different test programs: `PacketSender` and `Quicksort`.
 
+Programs may respond differently under fault injection.
+Generally, there are four possible failure outcomes:
+- **Benign**: The injected program returns the same correct output, as the original program.
+- **Crash**: The injected program throws an error, and fails to complete its execution.
+- **Hang**: The injected program is stuck during execution (usually in a loop).
+- **SDC**: (Silent Data Corruption), where the injected program completes its execution but returns a different, incorrect output compared to the original program.
+
+Programs that yield more frequent benign outcomes under fault injection are said to be more resilient.
+These programs may be intrinsicly resilient or purposely made resilient through the application of software fault tolerance design principles.
+
 
 ## Objective
 
@@ -80,9 +90,9 @@ At the end of this assignment, you should have a total of **8 pie graphs**.
 
 3. Measure and report the average percentage runtime overhead of the fault injected programs over the original programs. Do this for two test programs, and for each fault type, separately. (5 marks)
 
-4. Modify the `PacketSender.c` file to reduce error cases caused by buffer overflow injection. (Hint: The modifications should be minor. Can you find a one-line workaround?) Submit this modified source code file. Explain what you added/modified/removed. Rerun the fault injection experiments for buffer overflow only, and report the new results in a new pie graph. Do you observe any differences in failure outcomes after fixing the bug(s)? What is the runtime overhead of your (more fault tolerant) modified program compared to the original program? (10 marks)
+4. Modify the `PacketSender.c` file to reduce error cases caused by buffer overflow injection. (Hint: The modifications should be minor. Can you find a one-line workaround?) Submit this modified source code file. Explain what you added/modified/removed. Rerun the fault injection experiments for buffer overflow only, and report the new results in a new pie graph (by failure outcome). Do you observe any differences in failure outcomes after fixing the bug(s)? What is the runtime overhead of your (more fault tolerant) modified program compared to the original program? (10 marks)
 
-5. Modify the `Quicksort.cpp` file to reduce error cases caused by logical faults. Submit this modified source code file. Explain what you added/modified/removed. Rerun the fault injection experiments for logical faults only, and report the new results in a new pie graph. Do you observe any differences in failure outcomes after fixing the bug(s)? What is the runtime overhead of your (more fault tolerant) modified program compared to the original program? (10 marks)
+5. Modify the `Quicksort.cpp` file to reduce error cases caused by logical faults. Submit this modified source code file. Explain what you added/modified/removed. Rerun the fault injection experiments for logical faults only, and report the new results in a new pie graph (by failure outcome). Do you observe any differences in failure outcomes after fixing the bug(s)? What is the runtime overhead of your (more fault tolerant) modified program compared to the original program? (10 marks)
 
 
 #### Deliverable(s):

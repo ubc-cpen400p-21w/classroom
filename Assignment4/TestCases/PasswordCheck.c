@@ -15,7 +15,6 @@ int verify_password(char* password, int offsetA) {
 	}
 	
 	for (int i=0; i < SIZE; i++) {
-	  printf("Line %d: %c %c\n", i, passwordBuffer[i] - offsetA + offsetB, actualPwd[i]);
 	  char pwdChar = passwordBuffer[i] - offsetA + offsetB;
 	  assert(pwdChar >= 'a' && pwdChar <= 'z');  
 	  if (pwdChar != actualPwd[i]) {
@@ -29,7 +28,7 @@ int verify_password(char* password, int offsetA) {
 int main(int argc,char **argv) {
   int offsetA = 2;
 
-	int check = verify_password(argv[1], offsetA);
+  int check = verify_password(argv[1], offsetA);
   if (check) {
     printf("Password matched!\n");
   } else {

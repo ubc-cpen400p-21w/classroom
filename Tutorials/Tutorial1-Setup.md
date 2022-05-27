@@ -74,7 +74,7 @@ cp ../src/api/c++/z3++.h ./include/z3++.h
 
 3. Run the following commands to install KLEE and KLEE-uClibC:
 ```shell
-git clone git@github.com:klee/klee-uclibc.git
+git clone https://github.com/klee/klee-uclibc.git
 cd klee-uclibc
 ./configure --make-llvm-lib
 make KLEE_CFLAGS="-DKLEE_SYM_PRINTF"
@@ -122,7 +122,7 @@ sudo make install
 
 We have already set up an Ubuntu virtual machine with LLVM, KLEE, and AFL installed. You can simply download the virtual machine from the following link and import it on VirtualBox. Refer to the following tutorial on [importing virtual machines on VirtualBox](https://docs.oracle.com/cd/E26217_01/E26796/html/qs-import-vm.html "importing Virtual machines on VirtualBox").
 
-Download Virtual Machine [username: cpen400, password: root]: [LINK](https://ubcca-my.sharepoint.com/:u:/g/personal/uditag97_student_ubc_ca/ERuvE5FmjlpNj5_3IfbY3tkBCEGGfNB8_uPSAu5OW-KXoQ "LINK") . Please use your UBC email to access the file.
+Download Virtual Machine [username: cpen, password: root]: [LINK](https://ubcca-my.sharepoint.com/:u:/g/personal/abrahamc_student_ubc_ca/EWgu5OmW1J9Ikel_160t3P4BolncIvNRWLSB1s2-k1LQTQ "LINK") . Please use your UBC email to access the file.
 
 **Note:-**  While importing the virtual machine, please allocate at least 4GB RAM to the VM. Building LLVM requires a considerable amount of RAM.
 

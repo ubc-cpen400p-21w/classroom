@@ -52,7 +52,7 @@ You may include screenshots to complement your explanations.
    * B) Run AFL on the modified program, with default options. You must supply an input folder with seed files. Start with minimal number of seed files.
         ```bash
           afl-clang-fast -g AFL1.c -o AFL1
-          afl-fuzz -i input -o output -m none -- ./AFL1 @@
+          afl-fuzz -i input -o output -m none -- ./AFL1
         ```
        * i. How many crashes and hangs were encountered by AFL? (3 marks)
        * ii. How many bugs are detected by AFL? Explain the nature of all detected bug(s). If not, explain why no bugs were found. (2 marks)
